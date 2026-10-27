@@ -3,7 +3,7 @@ Edge Hill University Programming 1 Assessment 2.
 
 Christopher: Performer Management
 
-Kuba: Stage Management
+Jakub: Stage Management
 
 Sam: Vendor Management
 
