@@ -9,7 +9,7 @@ ticket_price = int(input("ticket price: "))
 ticket_quantity = int(input("ticket quantity: "))
 
 tickets_remaining
-ticket_storage[][]
+ticket_storage[]
 
 
 def create_ticket():
