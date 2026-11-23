@@ -1,6 +1,6 @@
 # Tests for core individual functionality
 
-import ticket-manage.py
+import pytest
 
 def test_create_ticket():
     assert ticket_record == ["standard", "5.00",  "500"]
