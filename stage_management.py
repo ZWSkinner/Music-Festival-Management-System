@@ -75,8 +75,22 @@ def view(stage_to_view):
 
     return f"Stage not found: {stage_to_view} Please try agian."
 
-def update():
-    return
+def update(stage_to_change,stage_new_name,stage_new_cap,stage_new_loc ):
+    stage_to_change = stage_to_change
+    #input("Which stage would you like to update?: ")
+    stage_new_name = stage_new_name
+    #input("enter the new name: ")
+    try:
+        stage_new_cap = int(stage_new_cap)
+        #input("enter the new capacity: ")
+    except ValueError:
+        return "Invalid input. Please enter a valid number for stage capacity."
+    stage_new_loc = stage_new_loc
+    #input("enter the new location: ")
+    stages[stage_to_change].update({"stname":stage_new_name})
+    stages[stage_to_change].update({"stcap":stage_new_cap})
+    stages[stage_to_change].update({"stloc":stage_new_loc})
+    return f"Updated {stage_to_change} name to {stage_new_name}."
 
 def delete():
     return

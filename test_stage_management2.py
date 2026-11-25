@@ -41,3 +41,14 @@ def test_view_all_stages():
     result_all = stage_management.view("All")
     
     assert result_all == "Stage Name: Stage X, Stage Capacity: 2000, Stage Location: Location X\n" + "Stage Name: Stage Y, Stage Capacity: 2500, Stage Location: Location Y\n"
+
+def test_update_stage():
+    stage_management.add("stage V", 12333, "location 5")
+    result = stage_management.update("stage V", "new_stage_name", 6000, "new_location")
+    assert result == "Updated stage V name to new_stage_name."
+
+
+def test_update_invalid():
+    stage_management.add("stage V", 12333, "location 5") 
+    result = stage_management.update("stage V", "new_stage_name", "six", "new_location")
+    assert result == "Invalid input. Please enter a valid number for stage capacity."
