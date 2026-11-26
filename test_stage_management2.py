@@ -52,3 +52,13 @@ def test_update_invalid():
     stage_management.add("stage V", 12333, "location 5") 
     result = stage_management.update("stage V", "new_stage_name", "six", "new_location")
     assert result == "Invalid input. Please enter a valid number for stage capacity."
+
+def test_delete():
+    stage_management.add("test stage", 6400,"test location")
+    stage_management.delete("test stage")
+    result = stage_management.view("test stage")
+    assert result == "Stage not found: test stage Please try agian."
+
+def test_delete_invalid():
+    result = stage_management.delete("invalid stage")
+    assert result == "Nothing to delete"

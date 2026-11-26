@@ -1,3 +1,5 @@
+import csv
+from pathlib import Path
 """todo:
 add functionality to update and delete stages.
 add persistence to the stages dictionary using a file type try json.
@@ -90,8 +92,14 @@ def update(stage_to_change,stage_new_name,stage_new_cap,stage_new_loc ):
     stages[stage_to_change].update({"stloc":stage_new_loc})
     return f"Updated {stage_to_change} name to {stage_new_name}."
 
-def delete():
-    return
+def delete(stage_name_to_del):
+    stage_name_to_del = stage_name_to_del
+    #input ("Which stage would you like to delete?")
+    try:
+        del stages[stage_name_to_del]
+        return "Successfully deleted"
+    except KeyError:
+        return "Nothing to delete"
 
 if __name__ == "__main__":
     stage_management()
